@@ -7,7 +7,7 @@
 - ProS3[D]
 
 
-This project ports the original Unexpected Maker Series D Arduino Helper library to ESP-IDF, providing a C++ wrapper for board features. The included demonstration focuses on blinking the built-in RGB and blue LEDs on supported boards, as well as external GPIO LEDs. Addressable LEDs (e.g., WS2812) are supported via the [led_strip](https://components.espressif.com/component/espressif/led_strip) library, installed through the [component manager](main/idf_component.yml).
+This project ports the original [Unexpected Maker Series D Arduino Helper library](https://github.com/UnexpectedMaker/seriesd_arduino_helper) to ESP-IDF, providing a C++ wrapper for board features. The included demonstration focuses on blinking the built-in RGB and blue LEDs on supported boards, as well as external GPIO LEDs. Addressable LEDs (e.g., WS2812) are supported via the [led_strip](https://components.espressif.com/component/espressif/led_strip) library, installed through the [component manager](main/idf_component.yml).
 
 ## Project Structure
 
