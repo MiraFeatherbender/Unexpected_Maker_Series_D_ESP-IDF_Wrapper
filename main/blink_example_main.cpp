@@ -43,6 +43,18 @@ static void configure_led(void)
     // Initialization is handled by ums3.begin()
 }
 
+#elif CONFIG_BLINK_BLUE_LED
+static void blink_led(void)
+{
+    ums3.setBlueLED(s_led_state);
+}
+
+static void configure_led(void)
+{
+    ESP_LOGI(TAG, "Example configured to blink blue LED!");
+    // Initialization is handled by ums3.begin()
+}
+
 #elif CONFIG_BLINK_LED_GPIO
 
 static void blink_led(void)

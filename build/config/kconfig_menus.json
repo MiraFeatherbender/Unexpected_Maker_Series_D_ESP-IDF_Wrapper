@@ -6932,15 +6932,7 @@
                 "range": null,
                 "title": null,
                 "type": "int"
-            }
-        ],
-        "depends_on": null,
-        "id": "um-series-d-board-configuration",
-        "title": "UM Series[D] Board Configuration",
-        "type": "menu"
-    },
-    {
-        "children": [
+            },
             {
                 "children": [],
                 "depends_on": null,
@@ -6985,73 +6977,60 @@
                 "children": [
                     {
                         "children": [],
-                        "depends_on": "<choice BLINK_LED>",
+                        "depends_on": "(UM_BOARD_PROS3 || UM_BOARD_FEATHERS3 || UM_BOARD_TINYS3) && <choice BLINK_LED>",
+                        "help": null,
+                        "id": "BLINK_LED_STRIP",
+                        "name": "BLINK_LED_STRIP",
+                        "range": null,
+                        "title": "RBG LED",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "UM_BOARD_FEATHERS3 && <choice BLINK_LED>",
+                        "help": null,
+                        "id": "BLINK_BLUE_LED",
+                        "name": "BLINK_BLUE_LED",
+                        "range": null,
+                        "title": "Blue LED",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "(UM_BOARD_EDGES3D || UM_BOARD_PROS3 || UM_BOARD_FEATHERS3 || UM_BOARD_TINYS3) && <choice BLINK_LED>",
                         "help": null,
                         "id": "BLINK_LED_GPIO",
                         "name": "BLINK_LED_GPIO",
                         "range": null,
                         "title": "GPIO",
                         "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "<choice BLINK_LED>",
-                        "help": null,
-                        "id": "BLINK_LED_STRIP",
-                        "name": "BLINK_LED_STRIP",
-                        "range": null,
-                        "title": "LED strip",
-                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
                 "help": "Select the LED type. A normal level controlled LED or an addressable LED strip.\nThe default selection is based on the Espressif DevKit boards.\nYou can change the default selection according to your board.",
-                "id": "example-configuration-blink-led-type",
+                "id": "um-series-d-board-configuration-blink-led-type",
                 "name": "BLINK_LED",
                 "title": "Blink LED type",
                 "type": "choice"
             },
             {
-                "children": [
-                    {
-                        "children": [],
-                        "depends_on": "SOC_RMT_SUPPORTED && <choice BLINK_LED_STRIP_BACKEND>",
-                        "help": null,
-                        "id": "BLINK_LED_STRIP_BACKEND_RMT",
-                        "name": "BLINK_LED_STRIP_BACKEND_RMT",
-                        "range": null,
-                        "title": "RMT",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "<choice BLINK_LED_STRIP_BACKEND>",
-                        "help": null,
-                        "id": "BLINK_LED_STRIP_BACKEND_SPI",
-                        "name": "BLINK_LED_STRIP_BACKEND_SPI",
-                        "range": null,
-                        "title": "SPI",
-                        "type": "bool"
-                    }
-                ],
-                "depends_on": "BLINK_LED_STRIP",
-                "help": "Select the backend peripheral to drive the LED strip.",
-                "id": "example-configuration-led-strip-backend-peripheral",
-                "name": "BLINK_LED_STRIP_BACKEND",
-                "title": "LED strip backend peripheral",
-                "type": "choice"
+                "children": [],
+                "depends_on": "BLINK_BLUE_LED",
+                "help": null,
+                "id": "BLINK_BLUE",
+                "name": "BLINK_BLUE",
+                "range": null,
+                "title": null,
+                "type": "int"
             },
             {
                 "children": [],
-                "depends_on": null,
-                "help": "GPIO number (IOxx) to blink on and off the LED.\nSome GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.",
+                "depends_on": "BLINK_LED_GPIO",
+                "help": "GPIO number (IOxx) for manual external LED blinking.\nOnly shown for GPIO mode. For other modes, board defaults are used.\nSome GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.",
                 "id": "BLINK_GPIO",
                 "name": "BLINK_GPIO",
-                "range": [
-                    0,
-                    48
-                ],
-                "title": "Blink GPIO number",
+                "range": null,
+                "title": "External GPIO number to blink",
                 "type": "int"
             },
             {
@@ -7069,8 +7048,8 @@
             }
         ],
         "depends_on": null,
-        "id": "example-configuration",
-        "title": "Example Configuration",
+        "id": "um-series-d-board-configuration",
+        "title": "UM Series[D] Board Configuration",
         "type": "menu"
     },
     {
