@@ -54,10 +54,24 @@ menu "UM Series[D] Board Configuration"
         int
         default 13 if UM_BOARD_FEATHERS3
 
+    menu "Example Selection"
+        choice
+            prompt "Select example to build"
+            default EXAMPLE_COLORWHEEL
+            config EXAMPLE_COLORWHEEL
+                bool "Color Wheel Example"
+                depends on UM_BOARD_PROS3 || UM_BOARD_FEATHERS3 || UM_BOARD_TINYS3
+            config EXAMPLE_BLINK
+                bool "Blink Example"
+        endchoice
+    endmenu
+
     orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
 
     choice BLINK_LED
         prompt "Blink LED type"
+        depends on EXAMPLE_BLINK
         default BLINK_LED_STRIP if UM_BOARD_PROS3 || UM_BOARD_FEATHERS3 || UM_BOARD_TINYS3
         default BLINK_LED_GPIO if UM_BOARD_EDGES3D
         help
@@ -79,22 +93,22 @@ menu "UM Series[D] Board Configuration"
     endchoice
 
     config BLINK_BLUE
-        depends on BLINK_BLUE_LED
+        depends on BLINK_BLUE_LED && EXAMPLE_BLINK
         int
         default UM_LED_BUILTIN_PIN if UM_BOARD_FEATHERS3
 
     config BLINK_GPIO
-        depends on BLINK_LED_GPIO
+        depends on BLINK_LED_GPIO && EXAMPLE_BLINK
         int "External GPIO number to blink"
         range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
         default 8
-
         help
             GPIO number (IOxx) for manual external LED blinking.
             Only shown for GPIO mode. For other modes, board defaults are used.
             Some GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.
 
     config BLINK_PERIOD
+        depends on EXAMPLE_BLINK
         int "Blink period in ms"
         range 10 3600000
         default 1000

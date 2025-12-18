@@ -6934,6 +6934,44 @@
                 "type": "int"
             },
             {
+                "children": [
+                    {
+                        "children": [
+                            {
+                                "children": [],
+                                "depends_on": "(UM_BOARD_PROS3 || UM_BOARD_FEATHERS3 || UM_BOARD_TINYS3) && <choice>",
+                                "help": null,
+                                "id": "EXAMPLE_COLORWHEEL",
+                                "name": "EXAMPLE_COLORWHEEL",
+                                "range": null,
+                                "title": "Color Wheel Example",
+                                "type": "bool"
+                            },
+                            {
+                                "children": [],
+                                "depends_on": "<choice>",
+                                "help": null,
+                                "id": "EXAMPLE_BLINK",
+                                "name": "EXAMPLE_BLINK",
+                                "range": null,
+                                "title": "Blink Example",
+                                "type": "bool"
+                            }
+                        ],
+                        "depends_on": null,
+                        "help": null,
+                        "id": "um-series-d-board-configuration-example-selection-select-example-to-build",
+                        "name": null,
+                        "title": "Select example to build",
+                        "type": "choice"
+                    }
+                ],
+                "depends_on": null,
+                "id": "um-series-d-board-configuration-example-selection",
+                "title": "Example Selection",
+                "type": "menu"
+            },
+            {
                 "children": [],
                 "depends_on": null,
                 "help": null,
@@ -7006,7 +7044,7 @@
                         "type": "bool"
                     }
                 ],
-                "depends_on": null,
+                "depends_on": "EXAMPLE_BLINK",
                 "help": "Select the LED type. A normal level controlled LED or an addressable LED strip.\nThe default selection is based on the Espressif DevKit boards.\nYou can change the default selection according to your board.",
                 "id": "um-series-d-board-configuration-blink-led-type",
                 "name": "BLINK_LED",
@@ -7015,7 +7053,7 @@
             },
             {
                 "children": [],
-                "depends_on": "BLINK_BLUE_LED",
+                "depends_on": "BLINK_BLUE_LED && EXAMPLE_BLINK",
                 "help": null,
                 "id": "BLINK_BLUE",
                 "name": "BLINK_BLUE",
@@ -7025,7 +7063,7 @@
             },
             {
                 "children": [],
-                "depends_on": "BLINK_LED_GPIO",
+                "depends_on": "BLINK_LED_GPIO && EXAMPLE_BLINK",
                 "help": "GPIO number (IOxx) for manual external LED blinking.\nOnly shown for GPIO mode. For other modes, board defaults are used.\nSome GPIOs are used for other purposes (flash connections, etc.) and cannot be used to blink.",
                 "id": "BLINK_GPIO",
                 "name": "BLINK_GPIO",
@@ -7035,7 +7073,7 @@
             },
             {
                 "children": [],
-                "depends_on": null,
+                "depends_on": "EXAMPLE_BLINK",
                 "help": "Define the blinking period in milliseconds.",
                 "id": "BLINK_PERIOD",
                 "name": "BLINK_PERIOD",
