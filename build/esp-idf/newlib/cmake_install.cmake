@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/blink")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ESP-IDF")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/jonat/UM-Dseries-menuconfig/blink/build/esp-idf/newlib/src/port/cmake_install.cmake")
+  include("C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/esp-idf/newlib/src/port/cmake_install.cmake")
 endif()
 

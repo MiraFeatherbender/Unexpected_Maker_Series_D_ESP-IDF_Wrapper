@@ -13,8 +13,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader/bootloader.elf
+    add-symbol-file C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/Users/jonat/UM-Dseries-menuconfig/blink/build/blink.elf
+file C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/ESP-IDF.elf

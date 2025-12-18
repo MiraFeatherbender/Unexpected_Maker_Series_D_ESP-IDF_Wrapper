@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/Users/jonat/esp/v5.5.1/esp-idf/components/bootloader/subprojec
   file(MAKE_DIRECTORY "C:/Users/jonat/esp/v5.5.1/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader"
-  "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader-prefix"
-  "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader-prefix/tmp"
-  "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader-prefix/src"
-  "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader"
+  "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader-prefix"
+  "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader-prefix/tmp"
+  "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader-prefix/src"
+  "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/jonat/UM-Dseries-menuconfig/blink/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

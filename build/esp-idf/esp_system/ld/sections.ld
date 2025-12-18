@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: C:\Users\jonat\UM-Dseries-menuconfig\blink\build\esp-idf\esp_system\ld\sections.ld.in */
+/* Generated from: C:\Users\jonat\UM-Dseries-menuconfig\Unexpected_Maker_Series_D_ESP-IDF_Wrapper\build\esp-idf\esp_system\ld\sections.ld.in */
 
 /*
 

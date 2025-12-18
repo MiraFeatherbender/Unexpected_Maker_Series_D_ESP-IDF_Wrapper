@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/jonat/UM-Dseries-menuconfig/blink/main
+# Install script for directory: C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/blink")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ESP-IDF")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

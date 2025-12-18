@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/jonat/UM-Dseries-menuconfig/blink/managed_components/espressif__led_strip
+# Install script for directory: C:/Users/jonat/UM-Dseries-menuconfig/Unexpected_Maker_Series_D_ESP-IDF_Wrapper/managed_components/espressif__led_strip
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/blink")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/ESP-IDF")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
