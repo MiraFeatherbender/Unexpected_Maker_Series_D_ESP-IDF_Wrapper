@@ -11,13 +11,14 @@ This project ports the original [Unexpected Maker Series D Arduino Helper librar
 
 ## Project Structure
 
-- main/blink_example_main.cpp — Main demonstration application for blinking built-in and external LEDs.
+- main/blink_example_main.cpp — Example: Blinking built-in, blue, and external LEDs.
+- main/colorwheel.cpp — Example: Cycling RGB LED through color wheel.
 - main/UMSeriesD.h / UMSeriesD.cpp — C++ wrapper class for UM Series[D] board features.
-- main/UMSeriesD_idf.h / UMSeriesD_idf.c — ESP-IDF C helper functions for board hardware (called by the wrapper).
-- main/Kconfig.projbuild — Project-specific configuration options for board features and LED selection.
+- main/UMSeriesD_idf.h / UMSeriesD_idf.c — ESP-IDF C helper functions for board hardware (used by the wrapper).
+- main/Kconfig.projbuild — Project-specific configuration options, including board, example, and LED selection.
 - main/idf_component.yml — ESP-IDF component manager dependencies (e.g., led_strip).
 - Kconfig — Root Kconfig file, includes project configuration.
-- CMakeLists.txt / main/CMakeLists.txt — Build system configuration.
+- CMakeLists.txt / main/CMakeLists.txt — Build system configuration, now selects example source file based on menuconfig.
 
 ## How to Use Example
 
@@ -34,20 +35,25 @@ Before project configuration and build, ensure the target is set to ESP32-S3 usi
 
 See the [Unexpected Maker Series D boards](https://unexpectedmaker.com/shop.html#!/Series-D/c/183424520) for more information.
 
+
 ### Configure the Project
 
 Open the project configuration menu (`idf.py menuconfig`).
 
 In the "UM Series[D] Board Configuration" menu:
 
-* Select your board type in the "Select UM Series[D] board" option.
-* Choose the LED type in the "Blink LED type" option:
-  * Use **GPIO** for an external LED (EdgeS3[D] or any board with a manual LED on a GPIO pin)
-  * Use **RBG LED** for the built-in addressable RGB LED (TinyS3[D], FeatherS3[D], ProS3[D])
-  * Use **Blue LED** for the built-in blue LED (FeatherS3[D] only)
-* If using GPIO mode, set the GPIO number in the "External GPIO number to blink" option.
-* If using Blue LED mode, it defaults to the built-in pin on FeatherS3[D].
-* Set the blinking period in the "Blink period in ms" option.
+* **Select your board type** in the "Select UM Series[D] board" option.
+* **Select the example to build** in the "Example Selection" menu:
+  * **Color Wheel Example** — Cycles the built-in RGB LED through the color wheel (TinyS3[D], FeatherS3[D], ProS3[D])
+  * **Blink Example** — Blinks the RGB, blue, or external LED (all boards)
+* If you select the **Blink Example**, additional options will appear:
+  * **Blink LED type** — Choose the LED type:
+    * **GPIO** for an external LED (EdgeS3[D] or any board with a manual LED on a GPIO pin)
+    * **RBG LED** for the built-in addressable RGB LED (TinyS3[D], FeatherS3[D], ProS3[D])
+    * **Blue LED** for the built-in blue LED (FeatherS3[D] only)
+  * If using **GPIO** mode, set the GPIO number in the "External GPIO number to blink" option.
+  * If using **Blue LED** mode, it defaults to the built-in pin on FeatherS3[D].
+  * Set the blinking period in the "Blink period in ms" option.
 
 ### Build and Flash
 
