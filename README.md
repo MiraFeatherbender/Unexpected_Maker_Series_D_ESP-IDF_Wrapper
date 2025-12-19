@@ -11,14 +11,23 @@ This project ports the original [Unexpected Maker Series D Arduino Helper librar
 
 ## Project Structure
 
-- main/blink_example_main.cpp — Example: Blinking built-in, blue, and external LEDs.
-- main/colorwheel.cpp — Example: Cycling RGB LED through color wheel.
-- main/UMSeriesD.h / UMSeriesD.cpp — C++ wrapper class for UM Series[D] board features.
-- main/UMSeriesD_idf.h / UMSeriesD_idf.c — ESP-IDF C helper functions for board hardware (used by the wrapper).
-- main/Kconfig.projbuild — Project-specific configuration options, including board, example, and LED selection.
-- main/idf_component.yml — ESP-IDF component manager dependencies (e.g., led_strip).
-- Kconfig — Root Kconfig file, includes project configuration.
-- CMakeLists.txt / main/CMakeLists.txt — Build system configuration, now selects example source file based on menuconfig.
+```
+.
+├── main/
+│   ├── examples/
+│   │   ├── blink_example_main.cpp   # Example: Blinking built-in, blue, and external LEDs
+│   │   └── colorwheel.cpp           # Example: Cycling RGB LED through color wheel
+│   ├── src/
+│   │   ├── UMSeriesD.h              # C++ wrapper class header
+│   │   ├── UMSeriesD.cpp            # C++ wrapper class implementation
+│   │   ├── UMSeriesD_idf.h          # ESP-IDF C helper header
+│   │   └── UMSeriesD_idf.c          # ESP-IDF C helper implementation
+│   ├── Kconfig.projbuild            # Project-specific configuration options
+│   └── idf_component.yml            # ESP-IDF component manager dependencies (e.g., led_strip)
+├── Kconfig                          # Root Kconfig file, includes project configuration
+├── CMakeLists.txt                   # Root build system configuration
+└── main/CMakeLists.txt              # Main build system configuration
+```
 
 ## How to Use Example
 
