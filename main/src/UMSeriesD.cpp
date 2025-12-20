@@ -1,4 +1,4 @@
-#include "UMSeriesD.h"
+#include "UMSeriesD.hpp"
 #include "UMSeriesD_idf.h"
 
 void UMSeriesD::begin() { ums3_begin(); }

@@ -13,7 +13,7 @@
 #include "esp_log.h"
 #include "led_strip.h"
 #include "esp_mac.h"
-#include "UMSeriesD.h"
+#include "UMSeriesD.hpp"
 
 static const char *TAG = "example";
 
