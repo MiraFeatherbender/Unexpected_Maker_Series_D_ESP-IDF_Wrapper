@@ -51,9 +51,11 @@
 - To use the blue LED: select `Blue LED` (FeatherS3[D] only).
 - To run the color wheel demo: select `Color Wheel Example` in menuconfig.
 
+
 ## References
 - See `README.md` for hardware requirements, usage details, and troubleshooting.
 - For new features or components, follow the pattern in `main/src/` and update Kconfig/CMake as needed.
+- Original Arduino Series D Helper library: [UnexpectedMaker/seriesd_arduino_helper (GitHub)](https://github.com/UnexpectedMaker/seriesd_arduino_helper/tree/main)
 
 ---
 
